@@ -42,8 +42,10 @@ puts ''
 ## Generate a number
 ### number will be a sum of two maximum and two minimum elements
 
-a = task2String.split(//).sort
-task3Number = a[0].to_i + a[1].to_i + a[-1].to_i + a[-2].to_i
+t3Arr = numbers
+
+t3Arr.sort
+task3Number = t3Arr[0].to_i + t3Arr[1].to_i + t3Arr[-1].to_i + t3Arr[-2].to_i
 
 puts "Third numbers task results"
 puts ''
