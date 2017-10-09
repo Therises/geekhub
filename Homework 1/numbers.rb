@@ -44,7 +44,7 @@ puts ''
 
 t3Arr = numbers
 
-t3Arr.sort
+t3Arr.sort!
 task3Number = t3Arr[0].to_i + t3Arr[1].to_i + t3Arr[-1].to_i + t3Arr[-2].to_i
 
 puts "Third numbers task results"
