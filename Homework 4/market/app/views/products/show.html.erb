@@ -1,0 +1,11 @@
+<h1>Showing <%= @product.name %>'s entry</h1>
+
+<p>
+	<b>Product's name: </b><%= @product.name %><br>
+	<b>Product's price: </b><%= @product.price %><br>
+	<b>Product's quantity: </b><%= @product.qty %>
+</p>
+<p>
+	<%= link_to "Edit entry", edit_product_path(@product) %>
+	<%= link_to "Back", products_path %>
+</p>

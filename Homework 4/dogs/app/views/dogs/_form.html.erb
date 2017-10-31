@@ -1,0 +1,29 @@
+<%= form_with model: @dog, local: true do |f| %>
+
+	<% if @dog.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@dog.errors.count, 'error') %> prohibited new dog creation:
+			</h2>
+			<ul>
+				<% @dog.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<b><%= f.label :name %></b><br>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<b><%= f.label :breed %></b><br>
+		<%= f.text_field :breed %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

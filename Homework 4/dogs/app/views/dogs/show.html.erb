@@ -1,0 +1,8 @@
+<h1>Dog Info</h1>
+
+<p>
+	This dog's name is <%= @dog.name %> and he\she is of <%= @dog.breed %> breed.
+</p>
+
+<%= link_to 'Update info', edit_dog_path(@dog) %>
+<%= link_to 'Back', dogs_path %>

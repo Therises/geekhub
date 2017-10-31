@@ -1,0 +1,17 @@
+<h1>All Characters</h1>
+<%= link_to "Create new character", new_character_path %>
+
+<% @chars.each do |c| %>
+	
+	<ol>
+		<li>
+			<p>This character's name is <%= c.name %> and he's\she's role is <%= c.role %></p>
+			<p>
+				<%= link_to "Show info", character_path(c) %>
+				<%= link_to "Edit character", edit_character_path(c) %>
+				<%= link_to "Delete charater", character_path(c), method: :delete %>
+			</p>
+		</li>
+	</ol>
+
+<% end %>

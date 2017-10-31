@@ -1,0 +1,26 @@
+<%= form_with model: @country, local: true do |f| %>
+
+	<% if @country.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@country.errors.count, 'error') %> prohibited this entry from saving:
+			</h2>
+			<ul>
+				<% @country.errors.full_messages.each do |m| %>
+					<li><%= m %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	
+	<p>
+		<b>Country name: </b><%= f.text_field :name %>
+	</p>
+	<p>
+		<b>Country area: </b><%= f.number_field :area %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>

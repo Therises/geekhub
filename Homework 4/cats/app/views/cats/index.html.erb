@@ -1,0 +1,17 @@
+<h1>Cats</h1>
+
+<%= link_to 'Create new cat entry', new_cat_path %>
+
+<ol>
+	<% @cats.each do |kitty| %>
+
+		<li>
+			<%= kitty.name %> is of <%= kitty.breed %>.<br>
+			<%= link_to 'Show info', cat_path(kitty) %>
+			<%= link_to 'Edit entry', edit_cat_path(kitty) %>
+			<%= link_to 'Delete entry', cat_path(kitty), method: :delete,
+									data: { confirm: 'Are you sure?' } %>
+ 		</li>
+
+	<% end %>
+</ol>

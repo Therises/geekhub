@@ -1,0 +1,441 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (16.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCats (20171030184329)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "cats" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "breed" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171030184329"]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-30 18:43:47.547414"], ["updated_at", "2017-10-30 18:43:47.547414"]]
+  [1m[35m (8.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-10-30 21:12:33 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  Rendered cats/index.html.erb within layouts/application (1.1ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/joe/Desktop/Geekhub/Homework 4/project_3/app/views/cats/index.html.erb:13: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+									data: { confirm 'Are you sure?' } );@output_buf
+									                 ^
+/home/joe/Desktop/Geekhub/Homework 4/project_3/app/views/cats/index.html.erb:13: syntax error, unexpected '}', expecting ')'
+a: { confirm 'Are you sure?' } );@output_buffer.safe_append=
+                              ^
+/home/joe/Desktop/Geekhub/Homework 4/project_3/app/views/cats/index.html.erb:16: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;	 end 
+         	    ^
+/home/joe/Desktop/Geekhub/Homework 4/project_3/app/views/cats/index.html.erb:19: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/joe/Desktop/Geekhub/Homework 4/project_3/app/views/cats/index.html.erb:21: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/cats/index.html.erb:13: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/cats/index.html.erb:13: syntax error, unexpected '}', expecting ')'
+app/views/cats/index.html.erb:16: syntax error, unexpected keyword_end, expecting ')'
+app/views/cats/index.html.erb:19: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/cats/index.html.erb:21: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2017-10-30 21:16:37 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  Rendered cats/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/joe/Desktop/Geekhub/Homework 4/project_3/app/views/cats/index.html.erb:13: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+									data: { confirm 'Are you sure?' } );@output_buf
+									                 ^
+/home/joe/Desktop/Geekhub/Homework 4/project_3/app/views/cats/index.html.erb:13: syntax error, unexpected '}', expecting ')'
+a: { confirm 'Are you sure?' } );@output_buffer.safe_append=
+                              ^
+/home/joe/Desktop/Geekhub/Homework 4/project_3/app/views/cats/index.html.erb:16: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;	 end 
+         	    ^
+/home/joe/Desktop/Geekhub/Homework 4/project_3/app/views/cats/index.html.erb:19: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/joe/Desktop/Geekhub/Homework 4/project_3/app/views/cats/index.html.erb:21: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/cats/index.html.erb:13: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/cats/index.html.erb:13: syntax error, unexpected '}', expecting ')'
+app/views/cats/index.html.erb:16: syntax error, unexpected keyword_end, expecting ')'
+app/views/cats/index.html.erb:19: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/cats/index.html.erb:21: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2017-10-30 21:16:43 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  Rendered cats/index.html.erb within layouts/application (0.9ms)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/home/joe/Desktop/Geekhub/Homework 4/project_3/app/views/cats/index.html.erb:13: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+									data: { confirm 'Are you sure?' } );@output_buf
+									                 ^
+/home/joe/Desktop/Geekhub/Homework 4/project_3/app/views/cats/index.html.erb:13: syntax error, unexpected '}', expecting ')'
+a: { confirm 'Are you sure?' } );@output_buffer.safe_append=
+                              ^
+/home/joe/Desktop/Geekhub/Homework 4/project_3/app/views/cats/index.html.erb:16: syntax error, unexpected keyword_end, expecting ')'
+'.freeze;	 end 
+         	    ^
+/home/joe/Desktop/Geekhub/Homework 4/project_3/app/views/cats/index.html.erb:19: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+                ^
+/home/joe/Desktop/Geekhub/Homework 4/project_3/app/views/cats/index.html.erb:21: syntax error, unexpected keyword_end, expecting ')'
+          end
+             ^):
+  
+app/views/cats/index.html.erb:13: syntax error, unexpected tSTRING_BEG, expecting keyword_do or '{' or '('
+app/views/cats/index.html.erb:13: syntax error, unexpected '}', expecting ')'
+app/views/cats/index.html.erb:16: syntax error, unexpected keyword_end, expecting ')'
+app/views/cats/index.html.erb:19: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/cats/index.html.erb:21: syntax error, unexpected keyword_end, expecting ')'
+Started GET "/" for 127.0.0.1 at 2017-10-30 21:17:05 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.1ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 1985ms (Views: 1983.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/cats/new" for 127.0.0.1 at 2017-10-30 21:17:09 +0200
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (3.4ms)
+  Rendered cats/new.html.erb within layouts/application (4.7ms)
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+    1: <%= form_with model: @cat, local: true do |f| %>
+    2: 
+    3: 	<% if @dog.errors.any? %>
+    4: 		<div id="error_explanation">
+    5: 			<h2>
+    6: 				<%= pluralize(@dog.errors.count, 'error')%> prohibited new cat entry creation:
+  
+app/views/cats/_form.html.erb:3:in `block in _app_views_cats__form_html_erb__1210743152848653643_70012800566340'
+app/views/cats/_form.html.erb:1:in `_app_views_cats__form_html_erb__1210743152848653643_70012800566340'
+app/views/cats/new.html.erb:3:in `_app_views_cats_new_html_erb___3232047410269620788_70012800317600'
+Started GET "/cats/new" for 127.0.0.1 at 2017-10-30 21:17:38 +0200
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (84.2ms)
+  Rendered cats/new.html.erb within layouts/application (86.2ms)
+Completed 200 OK in 116ms (Views: 113.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/cats/new" for 127.0.0.1 at 2017-10-30 21:18:35 +0200
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (2.1ms)
+  Rendered cats/new.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 25ms (Views: 24.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cats" for 127.0.0.1 at 2017-10-30 21:18:38 +0200
+Processing by CatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2iwSHVFIllCpJ86++huuesP3q8sw1GKXiATSGJH+G9BfrBikn7ero7fmSIuQzAP30W7sE9KokoILyFuzRsqbdQ==", "cat"=>{"name"=>"Blacky", "breed"=>"Fabulous"}, "commit"=>"Create Cat"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[32mINSERT INTO "cats" ("name", "breed", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Blacky"], ["breed", "Fabulous"], ["created_at", "2017-10-30 19:18:38.380050"], ["updated_at", "2017-10-30 19:18:38.380050"]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cats/1
+Completed 302 Found in 15ms (ActiveRecord: 10.0ms)
+
+
+Started GET "/cats/1" for 127.0.0.1 at 2017-10-30 21:18:38 +0200
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 56ms (Views: 29.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/cats/1" for 127.0.0.1 at 2017-10-30 21:18:42 +0200
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (0.3ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/cats/1" for 127.0.0.1 at 2017-10-30 21:18:44 +0200
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (0.4ms)
+Completed 200 OK in 31ms (Views: 28.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats/1" for 127.0.0.1 at 2017-10-30 21:20:19 +0200
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.1ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 32ms (Views: 30.0ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/cats/1" for 127.0.0.1 at 2017-10-30 21:21:53 +0200
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 41ms (Views: 38.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2017-10-30 21:21:58 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 23ms (Views: 21.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats/1/edit" for 127.0.0.1 at 2017-10-30 21:22:02 +0200
+Processing by CatsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.1ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cats/edit.html.erb within layouts/application
+  Rendered cats/_form.html.erb (2.3ms)
+  Rendered cats/edit.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/cats/1" for 127.0.0.1 at 2017-10-30 21:22:05 +0200
+Processing by CatsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iqhZb5TqlG5xZEKrE6ZlZegDId7AQ4QAIAsLjsgVnWIj2s84dD/Y8UtcEH6gMdCt5SCc+K50rFs7Or4tTwUdVA==", "cat"=>{"name"=>"Blacky", "breed"=>"Fabulousfdsf"}, "commit"=>"Update Cat", "id"=>"1"}
+Completed 500 Internal Server Error in 210ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (undefined local variable or method `params_find' for #<CatsController:0x007f5a4019b030>
+Did you mean?  params):
+  
+app/controllers/cats_controller.rb:30:in `update'
+Started PATCH "/cats/1" for 127.0.0.1 at 2017-10-30 21:24:43 +0200
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CatsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iqhZb5TqlG5xZEKrE6ZlZegDId7AQ4QAIAsLjsgVnWIj2s84dD/Y8UtcEH6gMdCt5SCc+K50rFs7Or4tTwUdVA==", "cat"=>{"name"=>"Blacky", "breed"=>"Fabulousfdsf"}, "commit"=>"Update Cat", "id"=>"1"}
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[33mUPDATE "cats" SET "breed" = ?, "updated_at" = ? WHERE "cats"."id" = ?[0m  [["breed", "Fabulousfdsf"], ["updated_at", "2017-10-30 19:24:44.026551"], ["id", 1]]
+  [1m[35m (13.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cats/1
+Completed 302 Found in 67ms (ActiveRecord: 15.5ms)
+
+
+Started GET "/cats/1" for 127.0.0.1 at 2017-10-30 21:24:44 +0200
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 481ms (Views: 478.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2017-10-30 21:24:52 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.4ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 26ms (Views: 23.8ms | ActiveRecord: 0.4ms)
+
+
+Started DELETE "/cats/1" for 127.0.0.1 at 2017-10-30 21:24:55 +0200
+Processing by CatsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"+G15ZmkJZz0+tpjEs7oY1e8mUz/B1W3ek1KCazuFMGl97XPfp/ZaziB3HvHZbbVY/b8U5yOpncsQngvA7LGwzA==", "id"=>"1"}
+  [1m[36mCat Load (0.1ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.7ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = ?[0m  [["id", 1]]
+  [1m[35m (30.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 38ms (ActiveRecord: 33.7ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2017-10-30 21:24:55 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 32ms (Views: 30.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats/new" for 127.0.0.1 at 2017-10-30 21:24:59 +0200
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (65.0ms)
+  Rendered cats/new.html.erb within layouts/application (66.3ms)
+Completed 200 OK in 90ms (Views: 88.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cats" for 127.0.0.1 at 2017-10-30 21:25:03 +0200
+Processing by CatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"sTSkTBuLVb/n7QOzgvVty1A8a8CxzY4GBZJxIRe7zeW0ZZvGqku66XfvpS8FAhS8kBNar0hLSMI9xZUMWKd9vw==", "cat"=>{"name"=>"vzv", "breed"=>"sfdvs"}, "commit"=>"Create Cat"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "cats" ("name", "breed", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "vzv"], ["breed", "sfdvs"], ["created_at", "2017-10-30 19:25:03.557003"], ["updated_at", "2017-10-30 19:25:03.557003"]]
+  [1m[35m (20.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cats/2
+Completed 302 Found in 53ms (ActiveRecord: 20.8ms)
+
+
+Started GET "/cats/2" for 127.0.0.1 at 2017-10-30 21:25:03 +0200
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCat Load (0.1ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 22ms (Views: 20.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2017-10-30 21:25:05 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 18ms (Views: 17.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats/new" for 127.0.0.1 at 2017-10-30 21:25:09 +0200
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (2.3ms)
+  Rendered cats/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 29ms (Views: 28.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cats" for 127.0.0.1 at 2017-10-30 21:25:13 +0200
+Processing by CatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"kshMa3eH2A0VKlMziDw9rab9xgXVTWZHsNQxjS8sJlSXmXPhxkc3W4Uo9a8Py0TaZtL3aizLoIOIg9WgYDCWDg==", "cat"=>{"name"=>"a vfdvavfd", "breed"=>"vfdvsdd "}, "commit"=>"Create Cat"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "cats" ("name", "breed", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "a vfdvavfd"], ["breed", "vfdvsdd "], ["created_at", "2017-10-30 19:25:13.050644"], ["updated_at", "2017-10-30 19:25:13.050644"]]
+  [1m[35m (19.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cats/3
+Completed 302 Found in 24ms (ActiveRecord: 20.2ms)
+
+
+Started GET "/cats/3" for 127.0.0.1 at 2017-10-30 21:25:13 +0200
+Processing by CatsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mCat Load (0.1ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering cats/show.html.erb within layouts/application
+  Rendered cats/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 33ms (Views: 29.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2017-10-30 21:25:14 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (4.3ms)
+Completed 200 OK in 33ms (Views: 31.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2017-10-30 21:28:57 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (13.4ms)
+Completed 200 OK in 50ms (Views: 41.0ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/cats/3" for 127.0.0.1 at 2017-10-30 21:29:00 +0200
+Processing by CatsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"4Xw2wY0J4BDmQG8TpYAUY6T5awDVSVNmpiNeBoc56nxk/Dx4Q/bd4/iB6SbPV7nutmAs2Dc1o3Ml79etUA1q2Q==", "id"=>"3"}
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = ?[0m  [["id", 3]]
+  [1m[35m (7.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 19ms (ActiveRecord: 8.9ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2017-10-30 21:29:00 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.3ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 24ms (Views: 22.1ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/cats/2" for 127.0.0.1 at 2017-10-30 21:29:02 +0200
+Processing by CatsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pKCr5vqSyf6ZUaRloDjjQjB5pGent3+er3A1eVPKRywhIKFfNG30DYeQIlDK707PIuDjv0XLj4ssvLzShP7HiQ==", "id"=>"2"}
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT  "cats".* FROM "cats" WHERE "cats"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[31mDELETE FROM "cats" WHERE "cats"."id" = ?[0m  [["id", 2]]
+  [1m[35m (7.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/cats
+Completed 302 Found in 15ms (ActiveRecord: 10.5ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2017-10-30 21:29:02 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 25ms (Views: 23.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/cats/new" for 127.0.0.1 at 2017-10-30 21:29:03 +0200
+Processing by CatsController#new as HTML
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (3.3ms)
+  Rendered cats/new.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 27ms (Views: 25.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/cats" for 127.0.0.1 at 2017-10-30 21:29:04 +0200
+Processing by CatsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Hag+d/aipATYwwXmbw4UoE//XpSOs16sraj+Uu2imTAY+QH9R2JLUkjBo3ro+W3Xj9Bv+3c1mGiV/xp/or4pag==", "cat"=>{"name"=>"", "breed"=>""}, "commit"=>"Create Cat"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering cats/new.html.erb within layouts/application
+  Rendered cats/_form.html.erb (2.8ms)
+  Rendered cats/new.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 25ms (Views: 21.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/cats" for 127.0.0.1 at 2017-10-30 21:29:18 +0200
+Processing by CatsController#index as HTML
+  Rendering cats/index.html.erb within layouts/application
+  [1m[36mCat Load (0.2ms)[0m  [1m[34mSELECT "cats".* FROM "cats"[0m
+  Rendered cats/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 122ms (Views: 112.4ms | ActiveRecord: 0.2ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (59.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCats (20171030184329)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "cats" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "breed" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171030184329"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-30 19:30:00.104096"], ["updated_at", "2017-10-30 19:30:00.104096"]]
+  [1m[35m (6.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

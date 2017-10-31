@@ -1,0 +1,15 @@
+<h1>Gallery</h1>
+
+<%= link_to "Add new entry", new_painting_path %>
+
+<% @paintings.each do |pntg| %>
+	<p>
+		This painting is called <%= pntg.title %>.
+		It was painted by <%= pntg.artist %> in <%= pntg.year %>.
+	</p>	
+	<p>
+		<%= link_to "Show details", painting_path(pntg) %>
+		<%= link_to "Edit entry info", edit_painting_path(pntg) %>
+		<%= link_to "Delete entry", painting_path(pntg), method: :delete %>
+	</p>
+<% end %>

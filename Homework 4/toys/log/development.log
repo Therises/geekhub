@@ -1,0 +1,341 @@
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (6.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateNames (20171031182306)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "names" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "qty" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171031182306"]]
+  [1m[35m (8.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-31 18:57:12.278385"], ["updated_at", "2017-10-31 18:57:12.278385"]]
+  [1m[35m (13.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-10-31 20:57:30 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ToysController#index as HTML
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.0ms)
+
+
+  
+NameError (uninitialized constant ToysController::Toy):
+  
+app/controllers/toys_controller.rb:3:in `index'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (23.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateToys (20171031190116)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "toys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "qy" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171031190116"]]
+  [1m[35m (7.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-31 19:01:33.024265"], ["updated_at", "2017-10-31 19:01:33.024265"]]
+  [1m[35m (5.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-10-31 21:01:55 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ToysController#index as HTML
+  Rendering toys/index.html.erb within layouts/application
+  [1m[36mToy Load (0.3ms)[0m  [1m[34mSELECT "toys".* FROM "toys"[0m
+  Rendered toys/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 1877ms (Views: 1850.2ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/toys/new" for 127.0.0.1 at 2017-10-31 21:02:00 +0200
+Processing by ToysController#new as HTML
+  Rendering toys/new.html.erb within layouts/application
+  Rendered toys/_form.html.erb (39.0ms)
+  Rendered toys/new.html.erb within layouts/application (40.3ms)
+Completed 200 OK in 97ms (Views: 60.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/toys/new" for 127.0.0.1 at 2017-10-31 21:03:55 +0200
+Processing by ToysController#new as HTML
+  Rendering toys/new.html.erb within layouts/application
+  Rendered toys/_form.html.erb (87.4ms)
+  Rendered toys/new.html.erb within layouts/application (88.6ms)
+Completed 200 OK in 126ms (Views: 125.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/toys" for 127.0.0.1 at 2017-10-31 21:04:02 +0200
+Processing by ToysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ocUFc5ADt7DrCKtkm8t0uJvRTXe/S9Z+c1M1uh4hsWkkRQ/KXvyKQ/XJLVHxHNk1iUgKr103Jmvwn7wRyRUxzA==", "toy"=>{"name"=>"bibika", "qty"=>"123"}, "commit"=>"Create Toy"}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+  
+ActiveModel::UnknownAttributeError (unknown attribute 'qty' for Toy.):
+  
+app/controllers/toys_controller.rb:7:in `create'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateToys (20171031190521)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "toys" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "qty" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171031190521"]]
+  [1m[35m (10.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-31 19:05:31.194942"], ["updated_at", "2017-10-31 19:05:31.194942"]]
+  [1m[35m (5.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/toys" for 127.0.0.1 at 2017-10-31 21:05:44 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ToysController#index as HTML
+  Rendering toys/index.html.erb within layouts/application
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT "toys".* FROM "toys"[0m
+  Rendered toys/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 315ms (Views: 302.0ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/toys/new" for 127.0.0.1 at 2017-10-31 21:05:46 +0200
+Processing by ToysController#new as HTML
+  Rendering toys/new.html.erb within layouts/application
+  Rendered toys/_form.html.erb (19.2ms)
+  Rendered toys/new.html.erb within layouts/application (20.4ms)
+Completed 200 OK in 58ms (Views: 45.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/toys/new" for 127.0.0.1 at 2017-10-31 21:07:10 +0200
+Processing by ToysController#new as HTML
+  Rendering toys/new.html.erb within layouts/application
+  Rendered toys/_form.html.erb (3.9ms)
+  Rendered toys/new.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 68ms (Views: 46.7ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/toys" for 127.0.0.1 at 2017-10-31 21:07:15 +0200
+Processing by ToysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hpxJ+HH1vXPVNCJI/f6PywtEk8r2fbC92tUn/HRPiE0DHENBvwqAgMv1pH2XKSJGGd3UEhQBQKhZGa5Xo3sI6A==", "toy"=>{"name"=>"bibka", "qty"=>"123"}, "commit"=>"Create Toy"}
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 0.0ms)
+
+
+  
+NoMethodError (undefined method `save?' for #<Toy:0x007f6d68337bb0>
+Did you mean?  save
+               save!):
+  
+app/controllers/toys_controller.rb:8:in `create'
+Started GET "/toys" for 127.0.0.1 at 2017-10-31 21:08:19 +0200
+Processing by ToysController#index as HTML
+  Rendering toys/index.html.erb within layouts/application
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT "toys".* FROM "toys"[0m
+  Rendered toys/index.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 30ms (Views: 23.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/toys/new" for 127.0.0.1 at 2017-10-31 21:08:20 +0200
+Processing by ToysController#new as HTML
+  Rendering toys/new.html.erb within layouts/application
+  Rendered toys/_form.html.erb (2.5ms)
+  Rendered toys/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 40ms (Views: 31.5ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/toys" for 127.0.0.1 at 2017-10-31 21:08:26 +0200
+Processing by ToysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"axj5gPMPM1FyQ3hSu/vBzDJjaqH2LSCDSRSGcKFUi2NofQ4X4IytW4tSRyyvgfYTRbIHOs/Q23Q0axVUZIQhsA==", "toy"=>{"name"=>"bibika", "qty"=>"123"}, "commit"=>"Create Toy"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.7ms)[0m  [1m[32mINSERT INTO "toys" ("name", "qty", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "bibika"], ["qty", 123], ["created_at", "2017-10-31 19:08:26.451726"], ["updated_at", "2017-10-31 19:08:26.451726"]]
+  [1m[35m (36.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/toys/1
+Completed 302 Found in 43ms (ActiveRecord: 38.2ms)
+
+
+Started GET "/toys/1" for 127.0.0.1 at 2017-10-31 21:08:26 +0200
+Processing by ToysController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT  "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering toys/show.html.erb within layouts/application
+  Rendered toys/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 70ms (Views: 20.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/toys" for 127.0.0.1 at 2017-10-31 21:08:33 +0200
+Processing by ToysController#index as HTML
+  Rendering toys/index.html.erb within layouts/application
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT "toys".* FROM "toys"[0m
+  Rendered toys/index.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/toys" for 127.0.0.1 at 2017-10-31 21:09:19 +0200
+Processing by ToysController#index as HTML
+  Rendering toys/index.html.erb within layouts/application
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT "toys".* FROM "toys"[0m
+  Rendered toys/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/toys/1" for 127.0.0.1 at 2017-10-31 21:09:23 +0200
+Processing by ToysController#destroy as HTML
+  Parameters: {"authenticity_token"=>"pDHCR7ypttOERWiaI2ZCs7OzVcSJoe2zj3lW2+99zAwhscj+claLIJqE7q9Jse8+oSoSHGvdHaYMtd9wOElMqQ==", "id"=>"1"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT  "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.4ms)[0m  [1m[31mDELETE FROM "toys" WHERE "toys"."id" = ?[0m  [["id", 1]]
+  [1m[35m (6.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/toys
+Completed 302 Found in 18ms (ActiveRecord: 9.4ms)
+
+
+Started GET "/toys" for 127.0.0.1 at 2017-10-31 21:09:23 +0200
+Processing by ToysController#index as HTML
+  Rendering toys/index.html.erb within layouts/application
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT "toys".* FROM "toys"[0m
+  Rendered toys/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 32ms (Views: 30.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/toys/new" for 127.0.0.1 at 2017-10-31 21:09:27 +0200
+Processing by ToysController#new as HTML
+  Rendering toys/new.html.erb within layouts/application
+  Rendered toys/_form.html.erb (1.7ms)
+  Rendered toys/new.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 39ms (Views: 37.6ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/toys" for 127.0.0.1 at 2017-10-31 21:09:47 +0200
+Processing by ToysController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"oWbqbynemMtobeqy3cWa496/F9dOH+vUGklwL1iWSCSiAx34Ol0GwZF81czJv608qW56THfiECNnNuMLnUbi9w==", "toy"=>{"name"=>"Codex Gigas", "qty"=>"666"}, "commit"=>"Create Toy"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[32mINSERT INTO "toys" ("name", "qty", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Codex Gigas"], ["qty", 666], ["created_at", "2017-10-31 19:09:47.651043"], ["updated_at", "2017-10-31 19:09:47.651043"]]
+  [1m[35m (21.8ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/toys/2
+Completed 302 Found in 27ms (ActiveRecord: 23.7ms)
+
+
+Started GET "/toys/2" for 127.0.0.1 at 2017-10-31 21:09:47 +0200
+Processing by ToysController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT  "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering toys/show.html.erb within layouts/application
+  Rendered toys/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/toys/2/edit" for 127.0.0.1 at 2017-10-31 21:09:50 +0200
+Processing by ToysController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT  "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering toys/edit.html.erb within layouts/application
+  Rendered toys/_form.html.erb (1.9ms)
+  Rendered toys/edit.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 37ms (Views: 35.2ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/toys/2" for 127.0.0.1 at 2017-10-31 21:09:54 +0200
+Processing by ToysController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DruM7G4hrjtkLRhqPUx2NwLyn0lkWU8aKUCwoz07u6Bp0EBo2Og5s+DYfUEb5JPHf94cxAlcuPy0uHBRHV4L3Q==", "toy"=>{"name"=>"Codex Gigas", "qty"=>"665"}, "commit"=>"Update Toy", "id"=>"2"}
+  [1m[36mToy Load (0.4ms)[0m  [1m[34mSELECT  "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 500 Internal Server Error in 258ms (ActiveRecord: 0.4ms)
+
+
+  
+NameError (undefined local variable or method `toy' for #<ToysController:0x007f6d6853a868>
+Did you mean?  @toy
+               try):
+  
+app/controllers/toys_controller.rb:29:in `update'
+Started PATCH "/toys/2" for 127.0.0.1 at 2017-10-31 21:10:15 +0200
+Processing by ToysController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DruM7G4hrjtkLRhqPUx2NwLyn0lkWU8aKUCwoz07u6Bp0EBo2Og5s+DYfUEb5JPHf94cxAlcuPy0uHBRHV4L3Q==", "toy"=>{"name"=>"Codex Gigas", "qty"=>"665"}, "commit"=>"Update Toy", "id"=>"2"}
+  [1m[36mToy Load (0.3ms)[0m  [1m[34mSELECT  "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.9ms)[0m  [1m[33mUPDATE "toys" SET "qty" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["qty", 665], ["updated_at", "2017-10-31 19:10:15.317221"], ["id", 2]]
+  [1m[35m (6.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/toys/2
+Completed 302 Found in 28ms (ActiveRecord: 11.0ms)
+
+
+Started GET "/toys/2" for 127.0.0.1 at 2017-10-31 21:10:15 +0200
+Processing by ToysController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT  "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering toys/show.html.erb within layouts/application
+  Rendered toys/show.html.erb within layouts/application (0.9ms)
+Completed 200 OK in 25ms (Views: 23.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/toys/2/edit" for 127.0.0.1 at 2017-10-31 21:10:18 +0200
+Processing by ToysController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT  "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering toys/edit.html.erb within layouts/application
+  Rendered toys/_form.html.erb (2.4ms)
+  Rendered toys/edit.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.1ms)
+
+
+Started PATCH "/toys/2" for 127.0.0.1 at 2017-10-31 21:10:20 +0200
+Processing by ToysController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ThUpiFnVLsLXwHTM5myDEqtbvV7Ci4UCnauBrdpcsJopfuUM7xy5SlM1EefAxGbi1nc+06+OcuQAU0Ff+jkA5w==", "toy"=>{"name"=>"Codex Gigas", "qty"=>"666"}, "commit"=>"Update Toy", "id"=>"2"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT  "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[33mUPDATE "toys" SET "qty" = ?, "updated_at" = ? WHERE "toys"."id" = ?[0m  [["qty", 666], ["updated_at", "2017-10-31 19:10:20.652815"], ["id", 2]]
+  [1m[35m (8.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/toys/2
+Completed 302 Found in 19ms (ActiveRecord: 11.3ms)
+
+
+Started GET "/toys/2" for 127.0.0.1 at 2017-10-31 21:10:20 +0200
+Processing by ToysController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mToy Load (0.1ms)[0m  [1m[34mSELECT  "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering toys/show.html.erb within layouts/application
+  Rendered toys/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 51ms (Views: 47.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/toys" for 127.0.0.1 at 2017-10-31 21:10:22 +0200
+Processing by ToysController#index as HTML
+  Rendering toys/index.html.erb within layouts/application
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT "toys".* FROM "toys"[0m
+  Rendered toys/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/toys" for 127.0.0.1 at 2017-10-31 21:10:24 +0200
+Processing by ToysController#index as HTML
+  Rendering toys/index.html.erb within layouts/application
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT "toys".* FROM "toys"[0m
+  Rendered toys/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 56ms (Views: 54.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/toys/2" for 127.0.0.1 at 2017-10-31 21:10:25 +0200
+Processing by ToysController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VhR5zbHqH7d8aXRd/FmiC9QN5s3ylQJjegN0+c+YznTTlHN0fxUiRGKo8miWjg+GxpShFRDp8nb5z/1SGKxO0Q==", "id"=>"2"}
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT  "toys".* FROM "toys" WHERE "toys"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[31mDELETE FROM "toys" WHERE "toys"."id" = ?[0m  [["id", 2]]
+  [1m[35m (20.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/toys
+Completed 302 Found in 25ms (ActiveRecord: 22.3ms)
+
+
+Started GET "/toys" for 127.0.0.1 at 2017-10-31 21:10:25 +0200
+Processing by ToysController#index as HTML
+  Rendering toys/index.html.erb within layouts/application
+  [1m[36mToy Load (0.2ms)[0m  [1m[34mSELECT "toys".* FROM "toys"[0m
+  Rendered toys/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 32ms (Views: 30.2ms | ActiveRecord: 0.2ms)
+
+

@@ -1,0 +1,11 @@
+<h1><%= @toy.name.capitalize %> toy entry</h1>
+
+<p>
+	<b>Toy name: </b><%= @toy.name %><br>
+	<b>Toy quantity: </b><%= @toy.qty %>
+</p>
+
+<p>
+	<%= link_to 'Edit entry', edit_toy_path(@toy) %>
+	<%= link_to 'Back', toys_path %>
+</p>

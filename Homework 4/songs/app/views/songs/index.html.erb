@@ -1,0 +1,17 @@
+<h1>All Songs</h1>
+
+<%= link_to "Create new song entry", new_song_path %>
+
+
+<ol>
+	<% @songs.each do |sng| %>
+		<li>
+			<p>Song <%= sng.title %>, performed by <%= sng.artist %></p>
+			<p>
+				<%= link_to "Show details", song_path(sng) %>
+				<%= link_to "Edit entry", edit_song_path(sng) %>
+				<%= link_to "Delete entry", song_path(sng), method: :delete %>
+			</p>
+		</li>
+	<% end %>
+</ol>

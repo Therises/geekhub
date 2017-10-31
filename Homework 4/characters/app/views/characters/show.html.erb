@@ -1,0 +1,8 @@
+<h1>Showing selected character's info</h1>
+
+<p>Character's name: <%= @char.name %></p>
+<p>Character's role: <%= @char.role %></p>
+<p>
+	<%= link_to "Back", characters_path %>
+	<%= link_to "Edit entry", edit_character_path %>
+</p>

@@ -1,0 +1,13 @@
+<%= form_with model: @product, local: true do |f| %>
+	
+	<p>
+		<b>Product name: </b><%= f.text_field :name %>
+	</p>
+	<p>
+		<b>Product cost: </b><%= f.number_field :price, step: 0.01 %>
+	</p>
+	<p>
+		<b>Product quantity: </b><%= f.number_field :qty %>
+	</p>
+	<p><%= f.submit %></p>
+<% end %>

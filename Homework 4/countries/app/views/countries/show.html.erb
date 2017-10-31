@@ -1,0 +1,12 @@
+<h1>Showing <%= @country.name %>'s entry</h1>
+
+<p>
+	This entry's country is <b><%= @country.name %></b>.
+</p>
+<p>
+	And area of this country is <b><%= @country.area %></b>.
+</p>
+<p>
+	<%= link_to 'Edit entry', edit_country_path(@country) %>
+	<%= link_to 'Back', countries_path %>
+</p>

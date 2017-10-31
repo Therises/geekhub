@@ -1,0 +1,21 @@
+<h1>Toys Listing</h1>
+
+<%= link_to 'Create new entry', new_toy_path %>
+
+	
+<ol>
+	<% @toys.each do |toy| %>
+	
+		<li>
+			<p>
+				Toy <%= toy.name.downcase %> in quantity of <%= toy.qty %>
+			</p>
+			<p>
+				<%= link_to 'Show entry', toy_path(toy) %>
+				<%= link_to 'Edit entry', edit_toy_path(toy) %>
+				<%= link_to 'Delete entry', toy_path(toy), method: :delete %>
+			</p>
+		</li>
+
+		<% end %>
+</ol>

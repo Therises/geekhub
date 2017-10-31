@@ -1,0 +1,17 @@
+<h1>Dogs</h1>
+
+<%= link_to 'Create new dog entry', new_dog_path %>
+
+<ol>
+<% @dogs.each do |doggo| %>
+
+<li>
+	<%= doggo.name %> is a <%= doggo.breed %>.<br>
+	<%= link_to 'Show info', dog_path(doggo) %>
+	<%= link_to 'Update info', edit_dog_path(doggo) %>
+	<%= link_to 'Delete entry', dog_path(doggo), method: :delete,
+							data: { confirm: 'Are you sure' } %>
+</li>
+
+<% end %>
+</ol>

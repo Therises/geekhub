@@ -1,0 +1,9 @@
+<h1>Showing selected entry info</h1>
+
+<p>Artist: <%= @painting.artist %></p>
+<p>Title: <%= @painting.title %></p>
+<p>Year: <%= @painting.year %></p>
+<p>
+	<%= link_to "Edit entry", edit_painting_path(@painting) %>
+	<%= link_to "Back", paintings_path %>	
+</p>

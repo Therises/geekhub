@@ -1,0 +1,174 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreatePaintings (20171031214823)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "paintings" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "artist" varchar, "year" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171031214823"]]
+  [1m[35m (7.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-31 21:48:35.742164"], ["updated_at", "2017-10-31 21:48:35.742164"]]
+  [1m[35m (14.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-11-01 00:12:34 +0200
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/joe/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/joe/.rvm/gems/ruby-2.4.1/gems/railties-5.1.4/lib/rails/templates/rails/welcome/index.html.erb (4.1ms)
+Completed 200 OK in 93ms (Views: 11.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-01 00:13:14 +0200
+Processing by PaintingsController#index as HTML
+  Rendering paintings/index.html.erb within layouts/application
+  [1m[36mPainting Load (0.1ms)[0m  [1m[34mSELECT "paintings".* FROM "paintings"[0m
+  Rendered paintings/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 1077ms (Views: 1062.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/paintings/new" for 127.0.0.1 at 2017-11-01 00:13:44 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PaintingsController#new as HTML
+  Rendering paintings/new.html.erb within layouts/application
+  Rendered paintings/_form.html.erb (50.1ms)
+  Rendered paintings/new.html.erb within layouts/application (63.8ms)
+Completed 200 OK in 514ms (Views: 441.1ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/paintings" for 127.0.0.1 at 2017-11-01 00:13:54 +0200
+Processing by PaintingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ex1qAJ/qjOIqF/qZGyyBTll147FWxy3Jrhxxvn4yJr7+nWC5URWxETTWfKxx+yzDS+ykabS73dwt0PgVqQamGw==", "painting"=>{"title"=>"", "artist"=>"", "year"=>""}, "commit"=>"Create Painting"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering paintings/new.html.erb within layouts/application
+  Rendered paintings/_form.html.erb (2.7ms)
+  Rendered paintings/new.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 33ms (Views: 27.9ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/paintings" for 127.0.0.1 at 2017-11-01 00:14:16 +0200
+Processing by PaintingsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xMGkuYUHXCu3kZzGmlX6O+d0dJlyPSHuLoIs8oUsl9xBQa4AS/hh2KlQGvPwgle29e0zQZBB0futTqVZUhgXeQ==", "painting"=>{"title"=>"Black square", "artist"=>"Malevish", "year"=>"1888"}, "commit"=>"Create Painting"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (41.0ms)[0m  [1m[32mINSERT INTO "paintings" ("title", "artist", "year", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Black square"], ["artist", "Malevish"], ["year", 1888], ["created_at", "2017-10-31 22:14:16.306634"], ["updated_at", "2017-10-31 22:14:16.306634"]]
+  [1m[35m (29.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/paintings/1
+Completed 302 Found in 74ms (ActiveRecord: 70.1ms)
+
+
+Started GET "/paintings/1" for 127.0.0.1 at 2017-11-01 00:14:16 +0200
+Processing by PaintingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPainting Load (0.2ms)[0m  [1m[34mSELECT  "paintings".* FROM "paintings" WHERE "paintings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering paintings/show.html.erb within layouts/application
+  Rendered paintings/show.html.erb within layouts/application (321.8ms)
+Completed 500 Internal Server Error in 353ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `painting' for #<#<Class:0x007fcf2c8ba0d0>:0x00000003cbd998>
+Did you mean?  @painting):
+    2: 
+    3: <p>Artist: <%= @painting.artist %></p>
+    4: <p>Title: <%= @painting.title %></p>
+    5: <p>Year: <%=painting.year %></p>
+    6: <p>
+    7: 	<%= link_to "Edit entry", edit_painting_path(@painting) %>
+    8: 	<%= link_to "Back", paintings_path %>	
+  
+app/views/paintings/show.html.erb:5:in `_app_views_paintings_show_html_erb__3369874370235705066_70263819682480'
+Started GET "/paintings/1" for 127.0.0.1 at 2017-11-01 00:14:56 +0200
+Processing by PaintingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPainting Load (0.4ms)[0m  [1m[34mSELECT  "paintings".* FROM "paintings" WHERE "paintings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering paintings/show.html.erb within layouts/application
+  Rendered paintings/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 38ms (Views: 33.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/paintings/1/edit" for 127.0.0.1 at 2017-11-01 00:15:01 +0200
+Processing by PaintingsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPainting Load (0.7ms)[0m  [1m[34mSELECT  "paintings".* FROM "paintings" WHERE "paintings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering paintings/edit.html.erb within layouts/application
+  Rendered paintings/_form.html.erb (4.1ms)
+  Rendered paintings/edit.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 40ms (Views: 37.7ms | ActiveRecord: 0.7ms)
+
+
+Started PATCH "/paintings/1" for 127.0.0.1 at 2017-11-01 00:15:04 +0200
+Processing by PaintingsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"QHNI8AUjhCLSwLgsjZOihxe2S//ctTz02tzefATpN/MUlS7pzW3WRX5NHzEjhhkfruY1V1G4tVKxTNUPSQbNhw==", "painting"=>{"title"=>"Black square213", "artist"=>"Malevish", "year"=>"1888"}, "commit"=>"Update Painting", "id"=>"1"}
+  [1m[36mPainting Load (0.1ms)[0m  [1m[34mSELECT  "paintings".* FROM "paintings" WHERE "paintings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.2ms)[0m  [1m[33mUPDATE "paintings" SET "title" = ?, "updated_at" = ? WHERE "paintings"."id" = ?[0m  [["title", "Black square213"], ["updated_at", "2017-10-31 22:15:04.453140"], ["id", 1]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/paintings/1
+Completed 302 Found in 16ms (ActiveRecord: 11.7ms)
+
+
+Started GET "/paintings/1" for 127.0.0.1 at 2017-11-01 00:15:04 +0200
+Processing by PaintingsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mPainting Load (0.1ms)[0m  [1m[34mSELECT  "paintings".* FROM "paintings" WHERE "paintings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering paintings/show.html.erb within layouts/application
+  Rendered paintings/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 39ms (Views: 35.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/paintings" for 127.0.0.1 at 2017-11-01 00:15:06 +0200
+Processing by PaintingsController#index as HTML
+  Rendering paintings/index.html.erb within layouts/application
+  [1m[36mPainting Load (0.2ms)[0m  [1m[34mSELECT "paintings".* FROM "paintings"[0m
+  Rendered paintings/index.html.erb within layouts/application (342.5ms)
+Completed 500 Internal Server Error in 348ms (ActiveRecord: 0.2ms)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `pnth' for #<#<Class:0x007fcf2c8ba0d0>:0x007fcf24025490>
+Did you mean?  pntg):
+    4: 
+    5: <% @paintings.each do |pntg| %>
+    6: 	<p>
+    7: 		This painting is called <%= pnth.title %>.
+    8: 		It was painted by <%= pntg.artist %> in <%= pntg.year %>.
+    9: 	</p>	
+   10: 	<p>
+  
+app/views/paintings/index.html.erb:7:in `block in _app_views_paintings_index_html_erb___1562889796624467085_70263819546420'
+app/views/paintings/index.html.erb:5:in `_app_views_paintings_index_html_erb___1562889796624467085_70263819546420'
+Started GET "/paintings" for 127.0.0.1 at 2017-11-01 00:15:40 +0200
+Processing by PaintingsController#index as HTML
+  Rendering paintings/index.html.erb within layouts/application
+  [1m[36mPainting Load (0.2ms)[0m  [1m[34mSELECT "paintings".* FROM "paintings"[0m
+  Rendered paintings/index.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 29ms (Views: 27.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/paintings/1" for 127.0.0.1 at 2017-11-01 00:15:45 +0200
+Processing by PaintingsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zejHouMgjpCRKUalQXLnkxg6A/ZApDLhkF826TkcledIaM0bLd+zY4/owJArpUoeCqNELqLYwvQTk79C7igVQg==", "id"=>"1"}
+  [1m[36mPainting Load (0.4ms)[0m  [1m[34mSELECT  "paintings".* FROM "paintings" WHERE "paintings"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[31mDELETE FROM "paintings" WHERE "paintings"."id" = ?[0m  [["id", 1]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/paintings
+Completed 302 Found in 11ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/paintings" for 127.0.0.1 at 2017-11-01 00:15:45 +0200
+Processing by PaintingsController#index as HTML
+  Rendering paintings/index.html.erb within layouts/application
+  [1m[36mPainting Load (0.3ms)[0m  [1m[34mSELECT "paintings".* FROM "paintings"[0m
+  Rendered paintings/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 51ms (Views: 35.5ms | ActiveRecord: 0.3ms)
+
+
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]

@@ -1,0 +1,29 @@
+<%= form_with model: @cat, local: true do |f| %>
+
+	<% if @cat.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@cat.errors.count, 'error')%> prohibited new cat entry creation:
+			</h2>
+			<ul>
+					<% @cat.errors.full_messages.each do |msg| %>
+						<li><%= msg %></li>
+					<% end %>
+				</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= f.label :name %><br>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<%= f.label :breed %><br>
+		<%= f.text_field :breed %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>

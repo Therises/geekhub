@@ -1,0 +1,11 @@
+<h1>Запись №<%= params[:id] %></h1>
+
+<p>
+	<b>Производитель: </b><%= @car.manufacturer %><br>
+	<b>Модель: </b><%= @car.model %><br>
+	<b>Год выпуска: </b><%= @car.yop %>
+</p>
+<p>
+	<%= link_to 'Изменить запись', edit_car_path(@car) %>
+	<%= link_to 'Назад', cars_path %>
+</p>

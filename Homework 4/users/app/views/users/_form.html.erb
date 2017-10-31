@@ -1,0 +1,34 @@
+<%= form_with model: @user, local: true do |f| %>
+
+	<% if @user.errors.any? %>
+		<div id="error_explanation">
+			<h2>
+				<%= pluralize(@user.errors.count, 'error') %> prohibited new user creation:
+			</h2>
+			<ul>
+				<% @user.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<b><%= f.label :name %></b><br>
+		<%= f.text_field :name %>
+	</p>
+
+	<p>
+		<b><%= f.label :age %></b><br>
+		<%= f.number_field :age %>
+	</p>
+
+	<p>
+		<b><%= f.label :email %></b><br>
+		<%= f.email_field :email %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

@@ -1,0 +1,15 @@
+<h1>Машины</h1>
+
+<%= link_to 'Создать новую запись', new_car_path %>
+
+<% @cars.each do |car| %>
+
+	<p>
+		<%= car.manufacturer + ' ' + car.model + ' ' + car.yop.to_s + ' года.' %><br>
+		<%= link_to 'Показать запись', car_path(car) %>
+		<%= link_to 'Редактировать запись', edit_car_path(car) %>
+		<%= link_to 'Удалить запись', car_path(car), method: :delete,
+								data: { confirm: 'Вы уверены?' } %>
+	</p>
+
+<% end %>

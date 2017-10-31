@@ -1,0 +1,11 @@
+<h1>Showing selected song's details</h1>
+
+<p>
+	<b>Title: </b><%= @song.title %><br>
+	<b>Artist: </b><%= @song.artist %><br>
+	<b>Album: </b><%= @song.album %>
+</p>
+<p>
+	<%= link_to "Edit entry", edit_song_path(@song) %>
+	<%= link_to "Back", songs_path %>
+</p>

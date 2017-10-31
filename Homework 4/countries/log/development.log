@@ -1,0 +1,483 @@
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (17.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCountries (20171031191326)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "area" float, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171031191326"]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-31 19:13:38.377499"], ["updated_at", "2017-10-31 19:13:38.377499"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+Started GET "/" for 127.0.0.1 at 2017-10-31 21:45:18 +0200
+  
+ActiveRecord::PendingMigrationError (
+
+Migrations are pending. To resolve this issue, run:
+
+        bin/rails db:migrate RAILS_ENV=development
+
+):
+  
+activerecord (5.1.4) lib/active_record/migration.rb:576:in `check_pending!'
+activerecord (5.1.4) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCountries (20171031192634)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "area" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171031192634"]]
+  [1m[35m (7.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-31 19:45:41.121077"], ["updated_at", "2017-10-31 19:45:41.121077"]]
+  [1m[35m (5.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2017-10-31 21:45:46 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (4.2ms)
+Completed 200 OK in 1913ms (Views: 1889.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-10-31 21:45:51 +0200
+Processing by CountriesController#new as HTML
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+Completed 404 Not Found in 20ms (ActiveRecord: 0.7ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Country with 'id'=):
+  
+app/controllers/countries_controller.rb:46:in `find_params'
+app/controllers/countries_controller.rb:17:in `new'
+Started GET "/countries/new" for 127.0.0.1 at 2017-10-31 21:47:42 +0200
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (80.2ms)
+  Rendered countries/new.html.erb within layouts/application (81.9ms)
+Completed 200 OK in 124ms (Views: 110.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/countries" for 127.0.0.1 at 2017-10-31 21:47:55 +0200
+Processing by CountriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PENfTCCqXzcljxnN5ry96JhOOK9mb52Sq5P8gWQUiii5w1X17lVixDtOn/iMaxBlitd/d4QTbYcoX3UqsyAKjQ==", "country"=>{"name"=>"America", "area"=>"4213"}, "commit"=>"Create Country"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "countries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-10-31 19:47:55.516678"], ["updated_at", "2017-10-31 19:47:55.516678"]]
+  [1m[35m (13.7ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/countries/1
+Completed 302 Found in 34ms (ActiveRecord: 14.5ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at 2017-10-31 21:47:55 +0200
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 34ms (Views: 24.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-10-31 21:48:46 +0200
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 38ms (Views: 36.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/countries/1/edit" for 127.0.0.1 at 2017-10-31 21:49:17 +0200
+Processing by CountriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/edit.html.erb within layouts/application
+  Rendered countries/_form.html.erb (6.6ms)
+  Rendered countries/edit.html.erb within layouts/application (13.3ms)
+Completed 200 OK in 49ms (Views: 44.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/countries/1" for 127.0.0.1 at 2017-10-31 21:49:30 +0200
+Processing by CountriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"f41b6uDvXqiwyJ/5DLhX8AtWfLSF0cqqPCrWUushEcWQD6Y27lOcJBn3lQCDgieQm7FB4iKx9vFfo3K3PGeUig==", "country"=>{"name"=>"America", "area"=>"213"}, "commit"=>"Update Country", "id"=>"1"}
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.3ms)[0m  [1m[33mUPDATE "countries" SET "name" = ?, "area" = ?, "updated_at" = ? WHERE "countries"."id" = ?[0m  [["name", "America"], ["area", 213], ["updated_at", "2017-10-31 19:49:30.476236"], ["id", 1]]
+  [1m[35m (9.6ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/countries/1
+Completed 302 Found in 21ms (ActiveRecord: 13.3ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at 2017-10-31 21:49:30 +0200
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 23ms (Views: 21.5ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-10-31 21:49:34 +0200
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 40ms (Views: 38.3ms | ActiveRecord: 0.3ms)
+
+
+Started DELETE "/countries/1" for 127.0.0.1 at 2017-10-31 21:49:40 +0200
+Processing by CountriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"O2rjSjZWf5KJo0plIpehercFK2X107/7hhXM8PQ0GG2+6unz+KlCYZdizFBIQAz3pZxsvRevT+4F2UVbIwCYyA==", "id"=>"1"}
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM "countries" WHERE "countries"."id" = ?[0m  [["id", 1]]
+  [1m[35m (10.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/countries
+Completed 302 Found in 16ms (ActiveRecord: 12.0ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-10-31 21:49:40 +0200
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 28ms (Views: 27.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-10-31 21:49:41 +0200
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (1.8ms)
+  Rendered countries/new.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 35ms (Views: 34.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/countries" for 127.0.0.1 at 2017-10-31 21:49:50 +0200
+Processing by CountriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DK4HpDm3uT6c326RpZ9BccQ/LJ7zEimY1QEclZPcEWmGgVpvzneyHQGlD1NHa9b3cqgZjugOwPN9Q+GO8B6jmQ==", "country"=>{"name"=>"America", "area"=>"3213"}, "commit"=>"Create Country"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (4.3ms)[0m  [1m[32mINSERT INTO "countries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-10-31 19:49:50.830197"], ["updated_at", "2017-10-31 19:49:50.830197"]]
+  [1m[35m (14.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/countries/2
+Completed 302 Found in 22ms (ActiveRecord: 18.6ms)
+
+
+Started GET "/countries/2" for 127.0.0.1 at 2017-10-31 21:49:50 +0200
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (0.7ms)
+Completed 200 OK in 33ms (Views: 30.7ms | ActiveRecord: 0.1ms)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateCountries (20171031195253)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (1.5ms)[0m  [1m[35mCREATE TABLE "countries" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "area" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20171031195253"]]
+  [1m[35m (6.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-10-31 19:53:01.948297"], ["updated_at", "2017-10-31 19:53:01.948297"]]
+  [1m[35m (5.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/countries/2" for 127.0.0.1 at 2017-10-31 21:53:14 +0200
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Completed 404 Not Found in 17ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Country with 'id'=2):
+  
+app/controllers/countries_controller.rb:46:in `find_params'
+app/controllers/countries_controller.rb:25:in `show'
+Started GET "/" for 127.0.0.1 at 2017-10-31 21:53:22 +0200
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 240ms (Views: 237.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-10-31 21:53:24 +0200
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (40.9ms)
+  Rendered countries/new.html.erb within layouts/application (42.5ms)
+Completed 200 OK in 98ms (Views: 90.3ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/countries" for 127.0.0.1 at 2017-10-31 21:53:31 +0200
+Processing by CountriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"a20O9IMVFNqIRdyvCVkOGUcZIHGz4ZAmCAVz+W8irXnhQlM/dNUf+RU/vW3rrZmf8Y4VYaj9eU2gR47iDOAfiQ==", "country"=>{"name"=>"America", "area"=>"123"}, "commit"=>"Create Country"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "countries" ("created_at", "updated_at") VALUES (?, ?)[0m  [["created_at", "2017-10-31 19:53:31.347676"], ["updated_at", "2017-10-31 19:53:31.347676"]]
+  [1m[35m (13.9ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/countries/1
+Completed 302 Found in 18ms (ActiveRecord: 14.4ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at 2017-10-31 21:53:31 +0200
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 29ms (Views: 23.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/countries/1/edit" for 127.0.0.1 at 2017-10-31 21:56:13 +0200
+Processing by CountriesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/edit.html.erb within layouts/application
+  Rendered countries/_form.html.erb (5.1ms)
+  Rendered countries/edit.html.erb within layouts/application (7.1ms)
+Completed 200 OK in 61ms (Views: 58.9ms | ActiveRecord: 0.2ms)
+
+
+Started PATCH "/countries/1" for 127.0.0.1 at 2017-10-31 21:56:25 +0200
+Processing by CountriesController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WTELC+kEsXva8/9Zyh9dshKPdTxbaRsP8gEJz3G+ydi2s/bX57hz93PM9aBFJS3SgmhIavwJJ1SRiK0qpvhMlw==", "country"=>{"name"=>"America", "area"=>"123"}, "commit"=>"Update Country", "id"=>"1"}
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (3.5ms)[0m  [1m[33mUPDATE "countries" SET "name" = ?, "area" = ?, "updated_at" = ? WHERE "countries"."id" = ?[0m  [["name", "America"], ["area", 123], ["updated_at", "2017-10-31 19:56:25.016322"], ["id", 1]]
+  [1m[35m (6.2ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/countries/1
+Completed 302 Found in 20ms (ActiveRecord: 9.9ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at 2017-10-31 21:56:25 +0200
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 40ms (Views: 37.9ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/countries/1" for 127.0.0.1 at 2017-10-31 21:58:16 +0200
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (0.8ms)
+Completed 200 OK in 41ms (Views: 21.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-10-31 21:58:18 +0200
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 21ms (Views: 19.0ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/countries/1" for 127.0.0.1 at 2017-10-31 21:58:19 +0200
+Processing by CountriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"J0Vmcljh0crZtq0EeCsLkTl7nsE+sGbcVtIzkkPyIpqixWzLlh7sOcd3KzES/KYcK+LZGdzMlsnVHro5lMaiPw==", "id"=>"1"}
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.8ms)[0m  [1m[31mDELETE FROM "countries" WHERE "countries"."id" = ?[0m  [["id", 1]]
+  [1m[35m (31.5ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/countries
+Completed 302 Found in 38ms (ActiveRecord: 33.5ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-10-31 21:58:19 +0200
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (1.4ms)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-10-31 21:58:20 +0200
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (1.9ms)
+  Rendered countries/new.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/countries" for 127.0.0.1 at 2017-10-31 21:58:21 +0200
+Processing by CountriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/a1ordzDxI/vo+DL1qfGdpojl6rsAY63noDQeIzb6dp3gjVmKwPPrHLZgQk0U1HwLLSiuvcdZ9w2wi1j7xlbKg==", "country"=>{"name"=>"", "area"=>""}, "commit"=>"Create Country"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (4.9ms)
+  Rendered countries/new.html.erb within layouts/application (7.5ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.1ms)
+
+
+  
+ActionView::Template::Error (undefined method `errors' for nil:NilClass):
+     6: 				<%= pluralize(@country.errors.count, 'error') %> prohibited this entry from saving:
+     7: 			</h2>
+     8: 			<ul>
+     9: 				<% @article.errors.full_messages.each do |m| %>
+    10: 					<li><%= m %></li>
+    11: 				<% end %>
+    12: 			</ul>
+  
+app/views/countries/_form.html.erb:9:in `block in _app_views_countries__form_html_erb___1922049104503245865_69857349435340'
+app/views/countries/_form.html.erb:1:in `_app_views_countries__form_html_erb___1922049104503245865_69857349435340'
+app/views/countries/new.html.erb:3:in `_app_views_countries_new_html_erb__3054728160060940225_69857375439100'
+app/controllers/countries_controller.rb:12:in `create'
+Started POST "/countries" for 127.0.0.1 at 2017-10-31 21:59:09 +0200
+Processing by CountriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/a1ordzDxI/vo+DL1qfGdpojl6rsAY63noDQeIzb6dp3gjVmKwPPrHLZgQk0U1HwLLSiuvcdZ9w2wi1j7xlbKg==", "country"=>{"name"=>"", "area"=>""}, "commit"=>"Create Country"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (2.2ms)
+  Rendered countries/new.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 33ms (Views: 26.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-10-31 21:59:26 +0200
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 20ms (Views: 18.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-10-31 21:59:28 +0200
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (1.6ms)
+  Rendered countries/new.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 25ms (Views: 24.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/countries" for 127.0.0.1 at 2017-10-31 21:59:30 +0200
+Processing by CountriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"gRpy8FNu8Ue2FiTUWOGPqZ/9WNvKkZ11qU1qaBsO2cMLNS87pK76ZCtsRRa6FRgvKWpty9GNdB4BD5dzeMxrMw==", "country"=>{"name"=>"", "area"=>""}, "commit"=>"Create Country"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (2.1ms)
+  Rendered countries/new.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 33ms (Views: 30.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-10-31 21:59:33 +0200
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (2.9ms)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/countries/new" for 127.0.0.1 at 2017-10-31 21:59:34 +0200
+Processing by CountriesController#new as HTML
+  Rendering countries/new.html.erb within layouts/application
+  Rendered countries/_form.html.erb (1.6ms)
+  Rendered countries/new.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 25ms (Views: 23.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/countries" for 127.0.0.1 at 2017-10-31 21:59:50 +0200
+Processing by CountriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KYH+ODz3yTJsHg7NjT+n16k6puWsNZPkZ5WJL/lT5MSjrqPzyzfCEfFkbw9vyzBRH62T9bcpeo/P13Q0mpFWNA==", "country"=>{"name"=>"Zimbabmwe", "area"=>"32"}, "commit"=>"Create Country"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "countries" ("name", "area", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Zimbabmwe"], ["area", 32], ["created_at", "2017-10-31 19:59:50.808053"], ["updated_at", "2017-10-31 19:59:50.808053"]]
+  [1m[35m (15.3ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/countries/2
+Completed 302 Found in 21ms (ActiveRecord: 16.2ms)
+
+
+Started GET "/countries/2" for 127.0.0.1 at 2017-10-31 21:59:50 +0200
+Processing by CountriesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mCountry Load (0.3ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering countries/show.html.erb within layouts/application
+  Rendered countries/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-10-31 22:01:13 +0200
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 30ms (Views: 28.3ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/countries/2" for 127.0.0.1 at 2017-10-31 22:01:20 +0200
+Processing by CountriesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"X/EGtYufZc4V6/FChYWyYaKOh2s7DtavyT4DcLdbcEzacQwMRWBYPQsqd3fvUh/ssBfAs9lyJrpK8orbYG/w6Q==", "id"=>"2"}
+  [1m[36mCountry Load (0.1ms)[0m  [1m[34mSELECT  "countries".* FROM "countries" WHERE "countries"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (1.9ms)[0m  [1m[31mDELETE FROM "countries" WHERE "countries"."id" = ?[0m  [["id", 2]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/countries
+Completed 302 Found in 17ms (ActiveRecord: 14.1ms)
+
+
+Started GET "/countries" for 127.0.0.1 at 2017-10-31 22:01:20 +0200
+Processing by CountriesController#index as HTML
+  Rendering countries/index.html.erb within layouts/application
+  [1m[36mCountry Load (0.2ms)[0m  [1m[34mSELECT "countries".* FROM "countries"[0m
+  Rendered countries/index.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 19ms (Views: 17.2ms | ActiveRecord: 0.2ms)
+
+

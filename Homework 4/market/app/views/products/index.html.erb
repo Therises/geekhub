@@ -1,0 +1,16 @@
+<h1>Market Products</h1>
+
+<%= link_to 'Create new entry', new_product_path %>
+
+<ul>
+	<% @products.each do |pr| %>
+		<li>
+			<p>We have <%= pr.name %> in quantity of <%= pr.qty %> and it costs <%= pr.price %> per unit.</p>
+			<p>
+				<%= link_to	'Show entry', product_path(pr) %>
+				<%= link_to 'Edit entry', edit_product_path(pr) %>
+				<%= link_to 'Delete entry', product_path(pr), method: :delete %>
+			</p>
+		</li>
+	<% end %>
+</ul>

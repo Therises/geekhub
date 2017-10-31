@@ -1,0 +1,17 @@
+<h1>Countries List</h1>
+
+<%= link_to 'Create new entry', new_country_path %>
+
+	<ul>
+		<% @countries.each do |c| %>
+			<li>
+				<p>Area of <%= c.name %> is <%= c.area %> square kilometers.</p>
+				<p>
+					<%= link_to 'Show entry', country_path(c) %>
+					<%= link_to 'Edit entry', edit_country_path(c) %>
+					<%= link_to 'Delete entry', country_path(c), method: :delete %>
+				</p>
+			</li>
+		<% end %>
+	</ul>
+	
