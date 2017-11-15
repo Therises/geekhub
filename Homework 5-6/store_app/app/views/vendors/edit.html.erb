@@ -1,0 +1,5 @@
+<%= link_to "Back", supplier_path(@vendor.supplier_id) %>
+
+<h1>Editing <%= @vendor.name %> vendor</h1>
+
+<%= render 'form', method: :patch, path: vendor_path(@vendor), btn_name: 'Update vendor' %>

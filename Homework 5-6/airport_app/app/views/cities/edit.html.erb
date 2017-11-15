@@ -1,0 +1,3 @@
+<h1>Editing city <%= @city.name %></h1>
+<%= render 'form',  path: city_path(@city), method: :patch, btn_name: 'Update city' %>
+<%= link_to "Back", country_path(@city.country_id) %>

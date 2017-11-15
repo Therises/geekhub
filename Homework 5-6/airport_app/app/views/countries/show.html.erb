@@ -1,0 +1,25 @@
+<h1>Showing <%= @country.name %></h1>
+<%= image_tag(@country.avatar_url(:thumb)) if @country.avatar? %> <br>
+
+	<%= link_to "Back", root_path %>
+	
+	<h2>Create city:</h2>
+	<%= render 'cities/form', method: :post, path: country_cities_path(@country), btn_name: 'Create city'  %>
+	<hr>
+	<% unless @country.cities.empty? %>
+		<h2>Cities:</h2>
+		<ul>
+			<% @cities.each do |a| %>
+			<li>
+				<p><%= a.name %></p>
+				<p>
+					<%= link_to "Show", city_path(a) %>
+					<%= link_to "Edit", edit_city_path(a) %>
+					<%= link_to "Delete", city_path(a), method: :delete %>
+				</p>
+			</li>
+			<% end %>
+		</ul>
+	<% end %>
+
+	<%= will_paginate @cities %>

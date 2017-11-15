@@ -1,0 +1,12 @@
+<%= form_with model: @country, local: true do |f| %>
+	<p>
+		<%= f.label :name %>
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.file_field :avatar %>
+	</p>
+	<p>
+		<%= f.submit %>
+	</p>
+<% end %>

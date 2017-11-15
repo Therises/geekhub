@@ -1,0 +1,4 @@
+<%= link_to "Back", category_path(@product.category_id) %>
+
+<h1>Editing <%= @product.name %> product</h1>
+<%= render 'form', method: :patch, path: product_path(@product), btn_name: 'Update product' %>

@@ -1,0 +1,26 @@
+<h1>Showing airport <%= @airport.name %></h1>
+
+<%= image_tag(@airport.avatar_url(:thumb)) if @airport.avatar? %> <br>
+	
+<%= link_to "Back", city_path(@airport.city_id) %>
+
+	<h2>Create plane:</h2>
+	<%= render 'planes/form', method: :post, path: airport_planes_path(@airport), btn_name: 'Create plane'  %>
+	<hr>
+	<% unless @airport.planes.empty? %>
+		<h2>planes:</h2>
+		<ul>
+			<% @planes.each do |a| %>
+			<li>
+				<p><%= a.name %></p>
+				<p>
+					<%= link_to "Show", plane_path(a) %>
+					<%= link_to "Edit", edit_plane_path(a) %>
+					<%= link_to "Delete", plane_path(a), method: :delete %>
+				</p>
+			</li>
+			<% end %>
+		</ul>
+	<% end %>
+
+<%= will_paginate @planes %>

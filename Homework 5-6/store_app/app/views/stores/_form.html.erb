@@ -1,0 +1,6 @@
+<%= form_with model: @store, local: true do |f| %>
+	<p><%= f.label :name %></p>
+	<p><%= f.text_field :name %></p>
+	<p><%= f.file_field :image %></p>
+	<p><%= f.submit %></p>
+<% end %>

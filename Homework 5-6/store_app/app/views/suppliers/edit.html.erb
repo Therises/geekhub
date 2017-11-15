@@ -1,0 +1,5 @@
+<%= link_to "Back", product_path(@supplier.product_id) %>
+
+<h1>Editing <%= @supplier.name %> supplier</h1>
+
+<%= render 'form', method: :patch, path: supplier_path(@supplier), btn_name: 'Update supplier' %>

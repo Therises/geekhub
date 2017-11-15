@@ -1,0 +1,3 @@
+<h1>Editing passenger <%= @passenger.name %></h1>
+<%= render 'form',  path: passenger_path(@passenger), method: :patch, btn_name: 'Update passenger' %>
+<%= link_to "Back", city_path(@passenger.city_id) %>
