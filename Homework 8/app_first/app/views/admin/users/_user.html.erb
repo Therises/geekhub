@@ -1,0 +1,16 @@
+<td><%= user.id %></td>
+<td><%= user.email %></td>
+<td>
+	<% if user.admin %>
+		Yes
+	<% end %>					
+</td>
+<td>
+	<%= link_to "Show", admin_user_path(user), class: "btn btn-primary" %>
+	<%= link_to "Delete", admin_user_path(user), method: :delete, remote: true, class: "btn btn-danger" %>
+	<% if user.admin %>
+		<%= link_to "Make User", admin_user_path(user, user: { admin: false }), method: :patch, remote: true, class: "btn btn-warning" %>
+	<% else %>
+		<%= link_to "Make Admin", admin_user_path(user, user: { admin: true }), method: :patch, remote: true, class: "btn btn-warning" %>
+	<% end %>
+</td>

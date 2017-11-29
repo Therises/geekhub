@@ -1,0 +1,7 @@
+<%= link_to "Home", root_path %>
+<h1>Showing <%= @user.email %> info</h1>
+<br>
+<%= link_to "Edit", edit_user_registration_path %>
+<br>
+
+<%= image_tag(@user.avatar_url(:thumb)) if @user.avatar? %>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AppFourth</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="container">
+  	<% if user_signed_in? %>
+  		<%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+  		<%= link_to "Profile", user_path(current_user) %>
+  		<% if current_user.admin? %>
+  			<%= link_to "Admin Menu", admin_users_path %>
+  		<% end %>
+  	<% else %>
+	  	<%= link_to "Log In", new_user_session_path %> or 
+	  	<%= link_to "Register", new_user_registration_path %>
+	  <% end %>
+    <%= yield %>
+  </body>
+</html>

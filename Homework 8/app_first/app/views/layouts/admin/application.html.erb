@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AppFirst</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body class="container">
+    <nav class="navbar navbar-default">
+      <ul class="nav navbar-nav">
+        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Back", admin_users_path %></li>
+        <li><%= link_to "Log Out", destroy_user_session_path, method: :delete %></li>
+      </ul>
+    </nav>
+    
+    <h1>Admin</h1>
+    <%= yield %>
+  </body>
+</html>

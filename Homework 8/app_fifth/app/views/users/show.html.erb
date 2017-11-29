@@ -1,0 +1,4 @@
+<h1>Showing <%= @user.email %> info</h1>
+<%= link_to "Edit", edit_user_registration_path, class: "btn btn-info" %>
+<br><br>
+<%= image_tag(@user.avatar_url(:thumb)) if @user.avatar? %>
