@@ -1,0 +1,22 @@
+
+<h1>Countries</h1>
+<%= link_to "Create new country", new_country_path %>
+
+<ul>
+	<% @countries.each do |a| %>
+		<li>
+			<p>
+				<%= a.name %>
+			</p>
+			<p>
+				<%= link_to "Show", country_path(a) %>
+				<% if current_user && current_user.admin %>
+					<%= link_to "Edit", edit_country_path(a) %>
+					<%= link_to "Delete", country_path(a), method: :delete %>
+				<% end %>
+			</p>
+		</li>
+	<% end %>
+</ul>
+
+<%= will_paginate @countries %>

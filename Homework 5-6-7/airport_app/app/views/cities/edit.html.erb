@@ -1,0 +1,8 @@
+<%= link_to "Back", country_path(@city.country_id) %>
+
+<% if current_user && current_user.admin %>
+	<h1>Editing city <%= @city.name %></h1>
+	<%= render 'form',  path: city_path(@city), method: :patch, btn_name: 'Update city' %>
+<% else %>
+	<h1>Unauthorized Acces</h1>
+<% end %>

@@ -1,7 +1,0 @@
-<h1>Showing ticket <%= @ticket.name %></h1>
-
-<%= image_tag(@ticket.avatar_url(:thumb)) if @ticket.avatar? %> <br>
-	
-	<h3>This ticket belongs to <%= @passenger %></h3>
-
-<%= link_to "Back", passenger_path(@ticket.passenger_id)  %>

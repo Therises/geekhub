@@ -1,0 +1,27 @@
+<p><%= link_to "Back", root_path %></p>
+<% unless current_user && current_user.admin %>
+	<h1>Unauthorized access</h1>
+<% else %>
+	<h1>Welcome Admin</h1>
+
+
+	<h2>Users</h2>
+	<table>
+  	<tr>
+  	  <th>User</th>
+  	  <th>Actions</th>
+  	  <th>Admin</th>
+  	</tr>
+  	<% @users.each do |a| %>
+  		<tr>
+  			<td><%= a.email %></td>
+				<td><%= link_to "Delete", admin_user_path(a), method: :delete %></td>
+  			<% if a.admin %>
+  				<td>Yes</td>
+  			<% else %>
+  				<td></td>
+  			<% end %>
+  		</tr>
+  	<% end %>
+  </table>
+<% end %>

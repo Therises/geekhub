@@ -1,0 +1,26 @@
+<%= link_to "Back", category_path(@product.category_id) %>
+
+<h1>Showing <%= @product.name %> product</h1>
+<%= image_tag(@product.image_url(:thumb)) if @product.image? %>
+
+<h2>Create new supplier:</h2>
+<%= render 'suppliers/form', method: :post, path: product_suppliers_path(@product), btn_name: 'Create supplier' %>
+
+<% unless @suppliers.empty? %>
+	<h2>Suppliers:</h2>
+	<ul>
+		<% @suppliers.each do |a| %>
+		<li>
+			<p><%= a.name %></p>
+			<p>
+				<%= link_to "Show", supplier_path(a) %>
+
+			</p>
+		</li>
+		<% end %>
+	</ul>
+<% end %>
+<%= paginate @suppliers %>
+<% unless @suppliers.empty? %>
+	<%= page_entries_info @suppliers %>
+<% end %>

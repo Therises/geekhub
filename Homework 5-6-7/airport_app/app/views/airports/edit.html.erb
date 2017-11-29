@@ -1,0 +1,9 @@
+
+<%= link_to "Back", city_path(@airport.city_id) %>
+
+<% if current_user && current_user.admin %>
+	<h1>Editing airport <%= @airport.name %></h1>
+	<%= render 'form',  path: airport_path(@airport), method: :patch, btn_name: 'Update airport' %>
+<% else %>
+	<h1>Unauthorized Acces</h1>
+<% end %>

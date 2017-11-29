@@ -1,0 +1,25 @@
+<%= link_to "Back", root_path %>
+
+<h1>Showing <%= @store.name %> store</h1>
+<%= image_tag(@store.image_url(:thumb)) if @store.image? %>
+
+<h2>Create new category:</h2>
+<%= render 'categories/form', method: :post, path: store_categories_path(@store), btn_name: 'Create category' %>
+
+<% unless @categories.empty? %>
+	<h2>Categories:</h2>
+	<ul>
+		<% @categories.each do |a| %>
+		<li>
+			<p><%= a.name %></p>
+			<p>
+				<%= link_to "Show", category_path(a) %>
+			</p>
+		</li>
+		<% end %>
+	</ul>
+<% end %>
+<%= paginate @categories %>
+<% unless @categories.empty? %>
+	<%= page_entries_info @categories %>
+<% end %>

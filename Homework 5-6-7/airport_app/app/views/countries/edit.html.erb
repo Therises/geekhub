@@ -1,0 +1,9 @@
+<%= link_to "Back", root_path %>
+
+
+<% if current_user && current_user.admin %>
+	<h1>Editing <%= @country.name %></h1>
+	<%= render 'form' %>
+<% else %>
+	<h1>Unauthorized Acces</h1>
+<% end %>
