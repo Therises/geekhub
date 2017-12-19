@@ -1,0 +1,9 @@
+development:
+  cloud_name: <%= ENV['cloudinary_name'] %>
+  api_key: <%= ENV['cloudinary_key'] %>
+  api_secret: <%= ENV['cloudinary_secret'] %>
+
+production:
+  cloud_name: <%= ENV['cloudinary_name'] %>
+  api_key: <%= ENV['cloudinary_key'] %>
+  api_secret: <%= ENV['cloudinary_secret'] %>

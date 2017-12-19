@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h2>Hi, <%= @user.email %>!</h2>
+    <br>
+    <br>
+    <p>
+      Your password is <strong><%= @pass %></strong>
+    </p>
+    <br>
+    <p>
+      You can login to your account <%= link_to "here", new_user_session_url %>.
+    </p>
+  </body>
+</html>
